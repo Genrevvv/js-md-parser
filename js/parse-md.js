@@ -1,44 +1,17 @@
 function parse(input) {
-    const tokens = {
-        '^# (.+)': 'h1',
-        '^## (.+)': 'h2',
-        '^### (.+)': 'h3',
-        '^#### (.+)': 'h4',
-        '^##### (.+)': 'h5',
-        '^###### (.+)': 'h6',
-        '^> (.+)': ['span', 'quote'],
-        '` (.+)`': ['span', 'inline-code']
-    };
+    const patterns = [
+        { regex: /(.*)^# (.+)(.*)/, replace: '$1<h1>$2</h1>$3' },
+        { regex: /(.*)^## (.+)(.*)/, replace: '$1<h2>$2</h2>$3' },
+        { regex: /(.*)^### (.+)(.*)/, replace: '$1<h3>$2</h3>$3' },
+        { regex: /(.*)^#### (.+)(.*)/, replace: '$1<h4>$2</h4>$3' },
+        { regex: /(.*)^##### (.+)(.*)/, replace: '$1<h5>$2</h5>$3' },
+        { regex: /(.*)^###### (.+)(.*)/, replace: '$1<h6>$2</h6>$3' },
+        { regex: /(.*)^> (.+)(.*)/, replace: '$1<span class="quote">$2</span>$3' },
+        { regex: /(.*)^`(.+)`(.*)/, replace: '$1<span class="inline-code">$2</span>$3' },
+    ];
 
-    let e = '';
-    let text = '';
-    let output = '';
-
-    let pattern = '';
-    let match = null;
-
-    for (let t in tokens) {
-        pattern = new RegExp(t);
-        match = input.match(pattern);
-        
-        if (input.match(pattern)) {
-            // console.log(input);
-            // console.log(t);
-            // console.log(t + ': ' + tokens[t]);
-    
-            e = tokens[t];
-            text = match[1].trim();
-    
-            if (Array.isArray(e)) {
-                output = `<${e[0]} class="${e[1]}">${text}</${e[0]}>`;
-            }
-            else {
-                output = `<${e}>${text}</${e}>`;
-            }
-            console.log(output);
-            return output;
-        }
-    
+    for (const { regex , replace } of patterns) {
+        input = input.replace(regex, replace);
     }
 
     return input;

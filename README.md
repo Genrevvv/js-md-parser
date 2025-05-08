@@ -1,4 +1,4 @@
-## JS Markdown parser
+## JavaScript Markdown parser
 A JavaScript program that parses basic Markdown input and returns formatted HTML.
 
 ## Supported Markdown syntax

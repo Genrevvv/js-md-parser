@@ -9,7 +9,7 @@ function parse(input) {
         { regex: /\*\*(.+)\*\*/gm, replace: '<b>$1</b>' },
         { regex: /__(.+)__/gm, replace: '<b>$1</b>' },
         { regex: /\*(.+)\*/gm, replace: '<i>$1</i>' },
-        { regex: /  _(.+)_/gm, replace: '<i>$1</i>' },
+        { regex: /_(.+)_/gm, replace: '<i>$1</i>' },
         { regex: /^> (.+)$/gm, replace: '<span class="quote">$1</span>' },
         { regex: /^`([^`]+)`$/gm, replace: '<span class="inline-code">$1</span>' },
         { regex: /^```([\s\S]+)```$/gm, replace: '<pre class="code-block">$1</pre>' },

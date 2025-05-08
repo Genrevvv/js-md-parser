@@ -38,18 +38,21 @@ body {
     padding: 0.5rem;
 }
 
-#md-output {
+#md-output-parent {
     background-color: #fff;
     width: 600px;
     height: 550px;
 
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-
     padding: 1rem;
     border: 0.1rem solid #000;
     border-radius: 0.5rem;
+}
+
+#md-output {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.5rem;
 }
 
 #md-output > :is(h1, h2, h3, h4, h5, h6) {

@@ -31,6 +31,7 @@ body {
 }
 
 #input-area {
+    font-size: 1rem;
     width: 40%;
     resize: none;
 
@@ -40,7 +41,7 @@ body {
 #md-output {
     background-color: #fff;
     width: 600px;
-    height: 500px;
+    height: 550px;
 
     display: flex;
     flex-direction: column;

@@ -6,10 +6,9 @@ const mdOutput = document.getElementById('md-output');
 const inputArea = document.getElementById('input-area');
 
 inputArea.addEventListener('input', (e) => {
-    input = inputArea.value.split('\n');
+    input = inputArea.value;
 
-    mdOutput.innerHTML = '';
-    for (let line of input) {
-        mdOutput.innerHTML += parse(line);
-    }
+    // localStorage.setItem(input, input);
+
+    mdOutput.innerHTML = parse(input);
 });

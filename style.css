@@ -67,7 +67,7 @@ body {
 }
 
 #md-output span:is(.quote) {
-    width: calc(100% - 0.8rem * 2);
+    width: calc(100% - 1.7rem);
 
     background-color: #eee;
     color: #000;
@@ -79,5 +79,13 @@ body {
 #md-output span:is(.inline-code) {
     background-color: #eee;
     padding: 0.1rem 0.4rem;
+    border-radius: 0.3rem;
+}
+
+#md-output pre:is(.code-block) {
+    background-color: #eee;
+    width: calc(100% - 2rem);
+
+    padding: 1rem 1rem;
     border-radius: 0.3rem;
 }

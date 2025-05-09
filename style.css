@@ -104,5 +104,5 @@ body {
 
 #md-output p > :is(a) {
     text-decoration: none;
-    color: blue;
+    color: #00f;
 }

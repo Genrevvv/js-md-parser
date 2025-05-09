@@ -92,6 +92,12 @@ body {
     border-radius: 0.3rem;
 }
 
-#md-output > :is(b, i) {
+#md-output > :is(strong, em) {
     display: inline-block;
+}
+
+#md-output > :is(p) {
+    width: 100%;
+    padding: 0;
+    margin: 0.5rem;
 }

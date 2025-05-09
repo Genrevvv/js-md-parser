@@ -8,3 +8,4 @@ A JavaScript program that parses basic Markdown input and returns formatted HTML
 - Blockquotes
 - Inline-block
 - Code-block
+- Links

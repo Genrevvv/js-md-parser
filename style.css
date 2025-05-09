@@ -101,3 +101,8 @@ body {
     padding: 0;
     margin: 0.5rem;
 }
+
+#md-output p > :is(a) {
+    text-decoration: none;
+    color: blue;
+}

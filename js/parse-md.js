@@ -14,6 +14,7 @@ function parse(input) {
         { regex: /^> (.+)$/gm, replace: '<span class="quote">$1</span>' },
         { regex: /^`([^`]+)`$/gm, replace: '<span class="inline-code">$1</span>' },
         { regex: /^```([\s\S]+)```$/gm, replace: '<pre class="code-block">$1</pre>' },
+        { regex: /\[(.+)\]\((.+)\)/gm, replace:'<p><a href="$2">$1</a></p>'}
     ];
 
     for (const { regex , replace } of patterns) {

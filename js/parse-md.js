@@ -14,7 +14,8 @@ function parse(input) {
         { regex: /\*\*(.+?)\*\*/gm, replace: '<strong>$1</strong>' },
         { regex: /__(.+?)__/gm, replace: '<strong>$1</strong>' },
         { regex: /\*(.+?)\*/gm, replace: '<em>$1</em>' },
-        { regex: /_(.+?)_/gm, replace: '<em>$1</em>' }
+        { regex: /_(.+?)_/gm, replace: '<em>$1</em>' },
+        { regex: /^(?!<(?:.+)>)(.+\n)(?!<(?:.+)>)$/gm, replace: '<p>$1</p>' }
     ];
 
     for (const { regex , replace } of patterns) {
